@@ -112,3 +112,134 @@ body{
 html {
     scroll-behavior: smooth;
   }
+
+
+@media only screen and (max-device-width: 1300px) {
+    .preview{
+display: none;
+    }
+    
+    .previewback{
+display: none;
+    }
+    .savednoteup{
+
+        height: 400px;
+        width: 300px;
+        -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 25%, 75% 0);
+        clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 25%, 75% 0);
+        border-radius: 10px;
+        color: white;   
+        font-family: 'Patrick Hand', cursive;
+        font-size: 15px;
+    }
+    
+    .savednote{
+        margin-top: 100px;
+        margin-left: 30%;
+        margin-right: 60%;
+        height: 300px;
+        width: 300px;
+        background-color: rgb(122, 122, 122);
+        border-radius: 10px;
+        transform: rotate(-5deg);
+    }
+    body{
+        background-color: #766161;
+    }
+    
+    
+    
+    .totaltodo{
+    
+    }
+    .todo-form{
+        position: absolute;
+        left:0;
+        right: 0;
+
+    }
+
+    .addbtn{
+        padding-right: 40%;
+    }
+    
+    .forminput{
+        margin-left: 10%;
+        margin-right: 10%;
+        width: 50%;
+        height: 40px;
+        outline: none;
+        background-color: #f9b208;
+        border: none;
+        border-radius: 10px;
+        transition: 0.5s;
+        display: block;
+        margin-top: 20px;
+        font-family: 'Patrick Hand', cursive;
+    }
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: rgb(56, 52, 52);
+        opacity: 1; /* Firefox */
+        padding-left: 10px;
+        font-family: 'Patrick Hand', cursive;
+    }
+    .forminput:focus{
+        width:400px;
+    }
+    
+    .colorpick{
+        width:40px;
+    }
+    
+    .colorpick:focus{
+        width:60px;
+    }
+    .textarea{
+        height: 80px
+    }
+    
+    .previewhead{
+        padding-top:30px ;
+        padding-left:30px ;
+        text-decoration: underline;
+    }
+    
+    .previewtext{
+        padding-left:30px ;
+        font-size: 20px;;
+        text-decoration: none;
+        padding-right: 80px;
+    }
+    
+    .saveditem{
+        display: inline-grid;
+        margin-top: 100px;
+    }
+    
+    
+    .doneback{
+        background-image: url("../public/done.png");
+        max-width: 300px;
+        min-height: 420px;
+        background-attachment: fill;
+    }
+    
+    .formhead{
+        font-family: 'Patrick Hand', cursive;
+        text-decoration: underline;
+        text-align: center;
+        padding-right: 30%;
+        
+    }
+    
+    .donetext{
+        text-decoration: line-through;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+      }
+
+
+}

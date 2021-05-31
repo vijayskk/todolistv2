@@ -16,7 +16,7 @@ function Todo() {
     return (
         <div className="totaltodo">
             <div className="previewback">
-                <div className=" preview" style={{backgroundColor:color}}>
+                <div className=" preview" style={{ backgroundColor: color }}>
                     <h1 className="previewhead">{previewtitle}</h1>
                     <div className="previewtext"><p >{previewtext}</p></div>
                 </div>
@@ -24,40 +24,42 @@ function Todo() {
             <div className="todo-form">
                 <form noValidate autoComplete="off">
                     <h1 className="formhead">What should I remember?</h1>
-                    <input className="forminput" type="text" placeholder="Title" onChange={(e)=>setPreviewtitle(e.target.value)}/>
-                    <textarea className="forminput textarea" type="text" placeholder="Text" onChange={(et)=>setPreviewtext(et.target.value)}/>
-                    <input className="forminput colorpick" type="color" placeholder="Title" onChange={(e)=>setcolor(e.target.value)}/>
-                    <IconButton style={{float:"right",paddingRight:"20px",paddingTop:"20px",width:"50px"}} onClick={()=>{
-                        settoDos([{ id:Date.now(), title: previewtitle , color:color,text:previewtext,status:"Active"},...toDos])
-                    }} ><AddBoxIcon/></IconButton>
+                    <input className="forminput" type="text" placeholder="Title" onChange={(e) => setPreviewtitle(e.target.value)} />
+                    <textarea className="forminput textarea" type="text" placeholder="Text" onChange={(et) => setPreviewtext(et.target.value)} />
+                    <input className="forminput colorpick" type="color" placeholder="Title" onChange={(e) => setcolor(e.target.value)} />
+                    <div className="addbtn">
+                        <IconButton style={{ float: "right", paddingRight: "20px", paddingTop: "20px", width: "50px" }} onClick={() => {
+                        settoDos([{ id: Date.now(), title: previewtitle, color: color, text: previewtext, status: "Active" }, ...toDos])
+                        }} ><AddBoxIcon /></IconButton>
+                    </div>
                 </form>
             </div>
-            
+
             <center><div className="saveditem">
                 {
-                    toDos.map((obj)=>{
-                        if(obj.status==="Active"){
+                    toDos.map((obj) => {
+                        if (obj.status === "Active") {
                             return (
                                 <div className="previewback savednote">
                                     <div className=" preview savednoteup" style={{ backgroundColor: obj.color }}>
                                         <h1 className="previewhead">{obj.title}</h1>
                                         <div className="previewtext"><p >{obj.text}</p></div>
-                                        <IconButton value="Done" style={{float:"right",paddingRight:"20px",marginTop:"200px",width:"50px"}} onClick={(e)=>{
-                                            settoDos(toDos.filter(obj2=>{
-                                                if(obj2.id===obj.id){
-                                                    obj2.status="Done"
+                                        <IconButton value="Done" style={{ float: "right", paddingRight: "20px", marginTop: "200px", width: "50px" }} onClick={(e) => {
+                                            settoDos(toDos.filter(obj2 => {
+                                                if (obj2.id === obj.id) {
+                                                    obj2.status = "Done"
                                                 }
                                                 return obj2
                                             }))
-                                        }}><DoneOutlineIcon/></IconButton>
-                                        <IconButton value="Finished" style={{float:"right",paddingRight:"20px",marginTop:"200px",width:"50px"}} onClick={(e)=>{
-                                            settoDos(toDos.filter(obj2=>{
-                                                if(obj2.id===obj.id){
-                                                    obj2.status=e.target.value
+                                        }}><DoneOutlineIcon /></IconButton>
+                                        <IconButton value="Finished" style={{ float: "right", paddingRight: "20px", marginTop: "200px", width: "50px" }} onClick={(e) => {
+                                            settoDos(toDos.filter(obj2 => {
+                                                if (obj2.id === obj.id) {
+                                                    obj2.status = e.target.value
                                                 }
                                                 return obj2
                                             }))
-                                        }} ><DeleteForeverIcon/></IconButton>
+                                        }} ><DeleteForeverIcon /></IconButton>
                                     </div>
                                 </div>
                             )
@@ -68,15 +70,15 @@ function Todo() {
                                     <div className=" preview " style={{ backgroundColor: "#3a3a3a47" }}>
                                         <h1 className="previewhead donetext">{obj.title}</h1>
                                         <div className="previewtext donetext"><p >{obj.text}</p></div>
-                                        
-                                        <IconButton value="Finished" style={{float:"right",paddingRight:"20px",marginTop:"200px",width:"50px"}} onClick={(e)=>{
-                                            settoDos(toDos.filter(obj2=>{
-                                                if(obj2.id===obj.id){
-                                                    obj2.status=e.target.value
+
+                                        <IconButton value="Finished" style={{ float: "right", paddingRight: "20px", marginTop: "200px", width: "50px" }} onClick={(e) => {
+                                            settoDos(toDos.filter(obj2 => {
+                                                if (obj2.id === obj.id) {
+                                                    obj2.status = e.target.value
                                                 }
                                                 return obj2
                                             }))
-                                        }} ><DeleteForeverIcon/></IconButton>
+                                        }} ><DeleteForeverIcon /></IconButton>
                                     </div>
                                 </div>
                             )
